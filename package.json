@@ -2,7 +2,7 @@
   "name": "scratch-ext",
   "version": "1.0.0",
   "description": "Scaffolding for Javascript/Typescript Scratch extensions",
-  "main": "dist/index.js",
+  "main": "TurboNetPeer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src",
@@ -14,7 +14,7 @@
     "format": "prettier ./src -c -w",
     "lint:format": "prettier ./src -c"
   },
-  "author": "FurryR",
+  "author": "BlockBoi19",
   "license": "MIT",
   "devDependencies": {
     "@turbowarp/types": "git+https://github.com/TurboWarp/types-tw.git#tw",
