@@ -1,5 +1,5 @@
 {
-  "name": "scratch-ext",
+  "name": "TurboNetPeer",
   "version": "1.0.0",
   "description": "Scaffolding for Javascript/Typescript Scratch extensions",
   "main": "TurboNetPeer.js",
