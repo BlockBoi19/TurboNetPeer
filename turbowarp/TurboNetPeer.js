@@ -215,49 +215,6 @@
                                 defaultValue: 'user123'
                             }
                         }
-                    },
-                    // Data Saving Label
-                    {
-                        blockType: Scratch.BlockType.LABEL,
-                        text: 'Data Saving'
-                    },
-                    // Data Saving Blocks
-                    {
-                        opcode: 'saveData',
-                        blockType: Scratch.BlockType.COMMAND,
-                        text: 'save data [KEY] with value [VALUE]',
-                        arguments: {
-                            KEY: {
-                                type: Scratch.ArgumentType.STRING,
-                                defaultValue: 'myData'
-                            },
-                            VALUE: {
-                                type: Scratch.ArgumentType.STRING,
-                                defaultValue: 'value'
-                            }
-                        }
-                    },
-                    {
-                        opcode: 'loadData',
-                        blockType: Scratch.BlockType.REPORTER,
-                        text: 'load data [KEY]',
-                        arguments: {
-                            KEY: {
-                                type: Scratch.ArgumentType.STRING,
-                                defaultValue: 'myData'
-                            }
-                        }
-                    },
-                    {
-                        opcode: 'deleteData',
-                        blockType: Scratch.BlockType.COMMAND,
-                        text: 'delete data [KEY]',
-                        arguments: {
-                            KEY: {
-                                type: Scratch.ArgumentType.STRING,
-                                defaultValue: 'myData'
-                            }
-                        }
                     }
                 ],
                 menus: {}
@@ -352,4 +309,29 @@
         }
 
         changePassword(args) {
-            if (this.password === args
+            if (this.password === args.OLD_PASSWORD) {
+                this.password = args.NEW_PASSWORD;
+            }
+        }
+
+        isPasswordSet() {
+            return !!this.password;
+        }
+
+        // Username Functions
+        setUsername(args) {
+            this.username = args.USERNAME;
+        }
+
+        getUsername() {
+            return this.username || '';
+        }
+
+        checkUsername(args) {
+            return this.username === args.USERNAME;
+        }
+    }
+
+    // Register the extension
+    Scratch.extensions.register(new TurboNetPeer());
+})(Scratch);
